@@ -58,6 +58,10 @@ function enableClick() {
 
 }
 
+function disableClick() {
+      $(".btn").off("click");
+   }
+
 function playAudio(name) {
     new Audio("sounds/" + name + ".mp3").play();
 }
@@ -71,6 +75,8 @@ function comparePattern() {
         }
     } else {
         $("#level-title").text(i18n[lang]["game_over"]);
+        isGameStarted= false;
+        disableClick();
     }
 }
 
